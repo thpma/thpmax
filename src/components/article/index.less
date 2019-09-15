@@ -1,0 +1,68 @@
+@import "../../styles/index.less";
+
+.article-comp {
+  text-decoration: none;
+  outline: none;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: @articleBGColor;
+  transition: 0.7s;
+  height: 180px;
+  grid-template-rows: 20% 40% 40%;
+  grid-template-columns: 35% 32% 32%; 
+  display: grid;
+  grid-template-areas: 'item1 item1 item1'
+                        'item2 item3 item3'
+                        'item2 item3 item3';
+  &:hover &-title {
+      color: @secondaryBGColor;
+  }
+
+  &-title {
+    grid-area: item1;
+    font-size: 20px;
+    color: @primaryTextColor;
+    transition: 0.3s;
+  }
+
+  &-cover {
+    grid-area: item2;
+    height: 140px;
+    width: 220px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  &-content {
+    grid-area: item3;
+    color: @primaryTextColor;
+    
+    &-intro {
+      overflow: hidden;
+      height: 110px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    &-status {
+      line-height: 30px;
+
+      div {
+        font-size: 14px;
+        padding: 0 15px;
+        display: inline-block;
+
+        svg {
+          position: relative;
+          top: 4px;
+        }
+
+        span {
+          position: relative;
+          left: 5px;
+        }
+      }
+    }
+  }
+}

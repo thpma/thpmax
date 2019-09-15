@@ -5,12 +5,19 @@ module.exports = {
   entry: path.resolve(__dirname, "src/index.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/static/",
     filename: "bundle.js"
   },
   devServer: {
     disableHostCheck: true,
-    hot: true
+    hot: true,
+    publicPath: "/static/",
+    proxy: {
+      "/blog": "http://localhost:8081",
+      "/static": "http://localhost:8081"
+    }
   },
+
   module: {
     rules: [
       {
@@ -42,9 +49,14 @@ module.exports = {
             loader: "postcss-loader"
           },
           {
-            loader: "less-loader"
+            loader: "less-loader",
+            options: { javascriptEnabled: true }
           }
         ]
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2|svg|jpg|png)/,
+        use: ["file-loader"]
       }
     ]
   }

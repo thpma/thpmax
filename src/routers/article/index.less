@@ -1,0 +1,92 @@
+@import "../../styles/index.less";
+
+h1, h2, h3, h4, h5, h6 {
+  color: @primaryTextColor !important;
+}
+
+.article-container {
+  overflow-x: hidden;
+  &-content {
+    margin-top: 10px;
+    background-color: @articleBGColor;
+    min-height: 500px;
+    outline: none;
+    color: @primaryTextColor;
+    padding: 10px;
+    font-size: 15px;
+    white-space: pre-wrap;
+    max-width: 702px;
+
+    &:empty::before{
+			color: @primaryTextColor;
+			content: attr(placeholder);
+		}
+
+    &-toolbox {
+      background-color: @articleBGColor;
+      
+      &-category {
+        div {
+          background-color: @articleBGColor;
+          border: 0;
+          ul li {
+            background-color: @articleBGColor !important;
+            color: @primaryTextColor !important;
+            border: 0 !important;
+          }
+        }
+      }
+
+      &-preview {
+        margin-top: 10px;
+
+        button {
+          width: 120px;
+          background-color: @secondaryBGColor !important;
+          border: none !important;
+        }
+      }
+
+      &-submit {
+
+        margin-top: 10px;
+        button {
+          width: 120px;
+        }
+      }
+    }
+  }
+
+  &-header {
+    position: relative;
+    height: 435px;
+
+    &-bg {
+      background-size: 100% 490px;
+      background-attachment: fixed;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+    }
+
+    &-title {
+      position: absolute;
+      margin: auto;
+      top: 250px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 30px;
+      text-align: center;
+      color: @primaryTextColor;
+      background-color: transparent;
+      width: 800px;
+      border: 0;
+      border-bottom: 1px solid rgba(@primaryTextColor, 0.25);
+      padding: 20px;
+      outline: none;
+      font-size: 24px;
+    }
+  }
+}

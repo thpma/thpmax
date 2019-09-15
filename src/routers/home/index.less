@@ -1,3 +1,156 @@
+@import "../../styles/index.less";
+
 .home-container {
-  color: #0088ff;
+  height: 2000px;
+
+  .article-write {
+    margin-top: 10px;
+    background-color: @articleBGColor;
+
+    &-item {
+      padding: 10px;
+      display: block;
+      color: @primaryTextColor;
+      width: 100px;
+      transition: 0.3s;
+
+      svg {
+        position: relative;
+        top: 3px;
+        fill: @primaryTextColor;
+        transition: 0.3s;
+      }
+
+      span {
+        padding: 0 5px;
+      }
+    }
+
+    &-item:hover {
+      color: @secondaryBGColor;
+      svg {
+        fill : @secondaryBGColor;
+      }
+    }
+  }
+
+  &-header {
+    position: relative;
+    height: 435px;
+
+    &-bg {
+      background-image: url(http://i.caigoubao.cc/612200/bg.jpg);
+      background-size: 100% 490px;
+      background-attachment: fixed;
+      height: 100%;
+      width: 100%;
+      filter: blur(10px) contrast(150%) saturate(50%);
+      position: absolute;
+      top: 0;
+    }
+
+    &-search {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 100px;
+      height: 30px;
+      width: 500px;
+      background-color: transparent;
+      border: 1px solid @searchBorder;
+      border-radius: 7px;
+      padding: 0 10px;
+      outline: none;
+      color: @primaryTextColor;
+    }
+  }
+
+  &-content {
+    width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+
+    &-turnpage {
+      margin-top: 10px;
+      padding: 10px;
+      text-align: center;
+      background-color: @articleBGColor;
+
+      button {
+        line-height: 22px;
+        width: 65px;
+        background-color: @secondaryBGColor;
+        color: @primaryTextColor;
+        border: 1px solid @secondaryBGColor;
+        border-radius: 5px;
+      }
+
+      span {
+        display: inline-block;
+        color: @primaryTextColor;
+        width: 100px;
+        font-size: 16px;
+      }
+    }
+
+    &-loading {
+      margin-top: 10px;
+      text-align: center;
+      width: 100%;
+      background-color: @articleBGColor;
+      line-height: 180px;
+      color: @primaryTextColor;
+      font-size: 16px;
+
+      i {
+        background-color: @secondaryBGColor;
+      }
+
+      div {
+        color: @primaryTextColor;
+      }
+    }
+
+    &-left {
+      flex-basis: 65%;
+    }
+
+    &-right {
+      flex-basis: 32%;
+      border-radius: 5px;
+      margin-top: 10px;
+
+      &-about {
+        background-color: @articleBGColor;
+        padding: 10px;
+        text-align: center;
+        height: 180px;
+  
+        div:nth-of-type(1) {
+          margin: 0 auto;
+          background: url(http://q2.qlogo.cn/headimg_dl?dst_uin=895975541&spec=5) no-repeat center;
+          background-size: cover;
+          height: 80px;
+          width: 80px;
+          border-radius: 50%;
+        }
+  
+        div:nth-of-type(2) {
+          font-size: 24px;
+          color: @primaryTextColor;
+          font-weight: 600;
+          text-shadow: 2px 2px 2px #000000;
+        }
+  
+        div:nth-of-type(3) {
+          color: @primaryTextColor;
+          font-size: 12px;
+          padding: 10px;
+        }
+      }
+    }
+  }
 }

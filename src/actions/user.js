@@ -1,7 +1,7 @@
-export const USER_TEST = "user:test";
+export const USER_UPDATE_STATUS = "user:update_status";
 
-export function UserTest() {
-  return { type: USER_TEST, payload: "bbab" };
+export function UpdateUserStatus() {
+  return { type: USER_UPDATE_STATUS, payload: { logged: true } };
 }
 
 // export function UserTest(sid) {

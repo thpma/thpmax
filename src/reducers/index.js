@@ -1,9 +1,11 @@
 import thunk from "redux-thunk";
 import { applyMiddleware, compose, createStore, combineReducers } from "redux";
 import user from "./user";
+import article from "./article";
 
 const allReducers = combineReducers({
-  user: user
+  user: user,
+  article: article
 });
 
 const allStoreEnhancers = compose(
