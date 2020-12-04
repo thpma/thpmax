@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^3.23.2",
-    "highlight.js": "^9.15.10",
+    "highlight.js": "^10.4.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-hot-loader": "^4.12.12",
